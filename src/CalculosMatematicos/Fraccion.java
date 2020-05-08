@@ -9,6 +9,8 @@ public class Fraccion {
 		this.numerador = numerador;
 		this.denominador = denominador;
 	}
+	
+	public Fraccion(){}
 
 	public int getNumerador() {
 		return numerador;
