@@ -8,8 +8,7 @@ import javax.swing.JTextArea;
 
 @SuppressWarnings("serial")
 public class OutputPane extends JPanel{
-	private JPanel outputPane;
-	private int resultado;
+	private static JPanel outputPane;
 	/**
 	 * El con
 	 * */
@@ -24,7 +23,7 @@ public class OutputPane extends JPanel{
 		JTextArea resultadoTextField = new JTextArea();
 		resultadoTextField.setEditable(false);
 		resultadoTextField.setLineWrap(true);
-		resultadoTextField.setText(String.valueOf(resultado));
+		//resultadoTextField.setText(String.valueOf(resultado));
 		resultadoTextField.setWrapStyleWord(true);
 		outputPane.add(resultadoTextField);
 	}
@@ -32,13 +31,6 @@ public class OutputPane extends JPanel{
 	private void updateResultado (int nuevoResultado) {
 		resultado = nuevoResultado;
 	}*/
-
-	public int getResultado() {
-		return resultado;
-	}
-	public void setResultado(int resultado) {
-		this.resultado = resultado;
-	}
 	public JPanel getOutputPane () {
 		return outputPane;
 	}

@@ -1,15 +1,21 @@
 package gui;
 
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+import inputPkg.DescomposicionPrimos;
 
 /**
  *Ventana principal donde se van a añadir los componentes de la GUI
  * */
 @SuppressWarnings({ "serial", "unused" })
 public class MainGui extends JFrame{
-	private JFrame mainFrame;
+	public JFrame mainFrame;
+	public static JPanel inputPane;
 	
 	public MainGui () {
 		setContentPane(getContentPane());
@@ -21,11 +27,10 @@ public class MainGui extends JFrame{
 		//panel de opciones
 		OptionsPane optionPane = new OptionsPane();
 		mainFrame.getContentPane().add(optionPane.getOptionPane());
-		
+
 		//panel de input
-		InputPane inputPane = new InputPane();
-		System.out.println(optionPane.getOptionPane().getComponentCount());
-		mainFrame.getContentPane().add(inputPane.getInputPane());
+		inputPane = new InputPane();
+		mainFrame.getContentPane().add(inputPane);
 		
 		//panel de resultado
 		OutputPane outputPane = new OutputPane();
@@ -34,6 +39,8 @@ public class MainGui extends JFrame{
 		
 		mainFrame.setVisible(true);
 	}
-	public static void main(String[]args) {MainGui maingui = new MainGui();/*BufferedReader br = new BufferedReader(new InputStreamReader(System.in));String s = br.readLine();*/
+	
+	public static void main(String[]args) {
+	MainGui maingui = new MainGui();/*BufferedReader br = new BufferedReader(new InputStreamReader(System.in));String s = br.readLine();*/
 	} 
 }
