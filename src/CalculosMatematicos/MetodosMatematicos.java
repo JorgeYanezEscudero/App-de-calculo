@@ -78,4 +78,30 @@ public class MetodosMatematicos {
 	                num2= num2 -num1;
 		return num1;
 	}
+	
+	public static Fraccion simplificar(Fraccion fr){
+		Fraccion gg= new Fraccion(
+		(fr.getNumerador()/maximocomundivisor(fr.getNumerador(), fr.getDenominador())),
+			(fr.getDenominador()/maximocomundivisor(fr.getNumerador(), fr.getDenominador()))
+				);
+		return gg;
+	}
+	
+	public static Fraccion suma(Fraccion prim,Fraccion sec){
+		
+		int mcm=minimocomunmultiplo(prim.getDenominador(),sec.getDenominador());
+		int operacion=(prim.getNumerador()/mcm)+(sec.getNumerador()/mcm);
+		Fraccion nf=new Fraccion(operacion,mcm);
+		nf=simplificar(nf);
+		return nf;
+	}
+	
+	public static Fraccion resta(Fraccion prim,Fraccion sec){
+		
+		int mcm=minimocomunmultiplo(prim.getDenominador(),sec.getDenominador());
+		int operacion=(prim.getNumerador()/mcm)-(sec.getNumerador()/mcm);
+		Fraccion nf=new Fraccion(operacion,mcm);
+		nf=simplificar(nf);
+		return nf;
+	}
 }
