@@ -116,7 +116,6 @@ public class OptionsPane extends JPanel{
 					MainGui.mainFrame.revalidate();
 					MainGui.mainFrame.pack();
 					MainGui.frameInputPane.updateUI();
-					System.out.println("Division de fracciones");
 					break;
 				case "Descomposicion de un numero en factores primos":
 					MainGui.frameInputPane.removeAll();

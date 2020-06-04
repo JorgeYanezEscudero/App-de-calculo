@@ -15,6 +15,7 @@ public class DescomposicionPrimos{
 	
 	public DescomposicionPrimos () {
 		descomposicionPane = new JPanel();
+		
 		numeroADescomponer = new JTextField("",10);
 		numeroADescomponer.addActionListener(new FieldChanged());
 		descomposicionPane.add(numeroADescomponer);
@@ -31,9 +32,9 @@ public class DescomposicionPrimos{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			try {
+				//MetodosMatetmaticos.descomposicionfactoresprimos(Integer.parseInt(numeroADescomponer.getText()));
 				Integer.parseInt(numeroADescomponer.getText());//placeholder de la funcion hasta tener el código
 				OutputPane.getResultadoTextField().setText(numeroADescomponer.getText());
-				//MetodosMatetmaticos.descomposicionfactoresprimos(Integer.parseInt(numeroADescomponer.getText()));
 				}catch (NumberFormatException formatErr){
 					JOptionPane.showMessageDialog(numeroADescomponer, "Tienes que insertar números.");
 					numeroADescomponer.setText("0");
