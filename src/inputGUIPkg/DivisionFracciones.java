@@ -75,7 +75,6 @@ public class DivisionFracciones {
 		gbc.gridy = 3;
 		realizarOperacion.addActionListener(new calcularResultado());
 		divisionFraccionesPane.add(realizarOperacion,gbc);
-		//divisionFraccionesPane.add(Box.createRigidArea(new Dimension()));
 		
 	}
 	
@@ -91,7 +90,7 @@ public class DivisionFracciones {
 				 * Fraccion f1 = new Fraccion(Integer.parseInt(numeradorF1.getText()),Integer.parseInt(denominadorF1.getText()));
 				 * Fraccion f2 = new Fraccion(Integer.parseInt(numeradorF2.getText()),Integer.parseInt(denominadorF2.getText()));
 				 * Fraccion resultado = CalculosMatematicos.dividirFracciones(f1,f2);
-				 * OutputPane.getResultadoTextField().setText(String.valeOf(resultado.numerador)+"/"+String.valueOf(resultado.denominador));
+				 * OutputPane.getResultadoTextField().setText(String.valueOf(resultado.numerador)+"/"+String.valueOf(resultado.denominador));
 				 * */
 				OutputPane.getResultadoTextField().setText("Operacion realizada");
 			}catch (NumberFormatException formatErr) {

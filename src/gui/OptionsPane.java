@@ -13,6 +13,7 @@ import javax.swing.border.LineBorder;
 
 import inputGUIPkg.DescomposicionPrimos;
 import inputGUIPkg.DivisionFracciones;
+import inputGUIPkg.Mcd;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -56,6 +57,8 @@ public class OptionsPane extends JPanel{
 				case "Maximo comun divisor":
 					MainGui.frameInputPane.removeAll();
 					
+					Mcd mcd = new Mcd();
+					MainGui.frameInputPane.add(mcd.getMcdPane());
 
 					MainGui.mainFrame.revalidate();
 					MainGui.mainFrame.pack();
@@ -64,6 +67,7 @@ public class OptionsPane extends JPanel{
 					break;
 				case "Minimo comun multiplo":
 					MainGui.frameInputPane.removeAll();
+					
 					
 
 					MainGui.mainFrame.revalidate();
@@ -75,6 +79,7 @@ public class OptionsPane extends JPanel{
 					MainGui.frameInputPane.removeAll();
 					
 
+					
 					MainGui.mainFrame.revalidate();
 					MainGui.mainFrame.pack();
 					MainGui.frameInputPane.updateUI();
@@ -92,6 +97,7 @@ public class OptionsPane extends JPanel{
 					break;
 				case "Resta de fracciones":
 					MainGui.frameInputPane.removeAll();
+					
 					
 
 					MainGui.mainFrame.revalidate();
@@ -111,16 +117,20 @@ public class OptionsPane extends JPanel{
 					break;
 				case "Division de fracciones":
 					MainGui.frameInputPane.removeAll();
+					
 					DivisionFracciones division = new DivisionFracciones();
 					MainGui.frameInputPane.add(division.getDivisionFraccionesPane());
+					
 					MainGui.mainFrame.revalidate();
 					MainGui.mainFrame.pack();
 					MainGui.frameInputPane.updateUI();
 					break;
 				case "Descomposicion de un numero en factores primos":
 					MainGui.frameInputPane.removeAll();
+					
 					DescomposicionPrimos descomposicion = new DescomposicionPrimos();
 					MainGui.frameInputPane.add(descomposicion.getDescomposicionPane());
+					
 					MainGui.mainFrame.revalidate();
 					MainGui.mainFrame.pack();
 					MainGui.frameInputPane.updateUI();
