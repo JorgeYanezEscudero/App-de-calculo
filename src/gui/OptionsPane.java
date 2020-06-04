@@ -17,6 +17,7 @@ import inputGUIPkg.Mcd;
 import inputGUIPkg.Mcm;
 import inputGUIPkg.MultiplicacionFracciones;
 import inputGUIPkg.RestaFracciones;
+import inputGUIPkg.SimplificacionFracciones;
 import inputGUIPkg.SumaFracciones;
 
 import java.awt.Color;
@@ -81,7 +82,8 @@ public class OptionsPane extends JPanel{
 				case "Simplificacion de Fracciones":
 					MainGui.frameInputPane.removeAll();
 					
-					
+					SimplificacionFracciones simplificar = new SimplificacionFracciones();
+					MainGui.frameInputPane.add(simplificar.getSimplificacionFraccionesPane());
 					
 					MainGui.mainFrame.revalidate();
 					MainGui.mainFrame.pack();
