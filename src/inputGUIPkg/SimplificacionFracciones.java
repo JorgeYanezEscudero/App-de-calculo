@@ -62,6 +62,7 @@ public class SimplificacionFracciones {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			try {
+				OutputPane.getResultadoTextField().setText("");
 				Fraccion resultado = MetodosMatematicos.simplificar(new Fraccion(Integer.parseInt(numeradorF1.getText()),Integer.parseInt(denominadorF1.getText())));
 				
 				OutputPane.getResultadoTextField().setText(String.valueOf(resultado.getNumerador())+"/"+String.valueOf(resultado.getDenominador()));

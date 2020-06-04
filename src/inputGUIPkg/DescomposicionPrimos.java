@@ -34,6 +34,7 @@ public class DescomposicionPrimos{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			try {
+				OutputPane.getResultadoTextField().setText("");
 				String listaFactores = "";
 				LinkedList<Integer> lista = MetodosMatematicos.descomposicionfactoresprimos(Integer.parseInt(numeroADescomponer.getText()));
 				for (int i = 0; i < lista.size(); i++) {
