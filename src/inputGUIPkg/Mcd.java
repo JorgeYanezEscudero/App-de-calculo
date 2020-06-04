@@ -26,7 +26,7 @@ public class Mcd {
 		numero2 = new JTextField("Numero 2");
 		mcdPane.add(numero2);
 		
-		realizarOperacion = new JButton("Obtener Resultado");
+		realizarOperacion = new JButton("Obtener MCD");
 		realizarOperacion.addActionListener(new calcularResultado());
 		mcdPane.add(realizarOperacion);
 	}

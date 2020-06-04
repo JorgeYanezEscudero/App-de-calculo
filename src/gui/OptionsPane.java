@@ -14,6 +14,7 @@ import javax.swing.border.LineBorder;
 import inputGUIPkg.DescomposicionPrimos;
 import inputGUIPkg.DivisionFracciones;
 import inputGUIPkg.Mcd;
+import inputGUIPkg.Mcm;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -63,17 +64,16 @@ public class OptionsPane extends JPanel{
 					MainGui.mainFrame.revalidate();
 					MainGui.mainFrame.pack();
 					MainGui.frameInputPane.updateUI();
-					System.out.println("Maximo comun divisor");
 					break;
 				case "Minimo comun multiplo":
 					MainGui.frameInputPane.removeAll();
 					
-					
+					Mcm mcm = new Mcm();
+					MainGui.frameInputPane.add(mcm.getMcmPane());
 
 					MainGui.mainFrame.revalidate();
 					MainGui.mainFrame.pack();
 					MainGui.frameInputPane.updateUI();
-					System.out.println("Minimo comun multiplo");
 					break;
 				case "Simplificacion de Fracciones":
 					MainGui.frameInputPane.removeAll();
