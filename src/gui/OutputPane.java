@@ -6,25 +6,23 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-@SuppressWarnings("serial")
-public class OutputPane extends JPanel{
+public class OutputPane {
 	private static JPanel outputPane;
-	/**
-	 * El con
-	 * */
+	private static JTextArea resultadoTextField;
+	
 	public OutputPane () {
 		outputPane = new JPanel();
 		outputPane.setBorder(null);
 		outputPane.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JLabel resultadoLabel = new JLabel("Resultado");
+		JLabel resultadoLabel = new JLabel("Resultado: ");
 		outputPane.add(resultadoLabel);
 		
-		JTextArea resultadoTextField = new JTextArea();
-		resultadoTextField.setEditable(false);
+		resultadoTextField = new JTextArea();
+		resultadoTextField.setColumns(10);
 		resultadoTextField.setLineWrap(true);
-		//resultadoTextField.setText(String.valueOf(resultado));
 		resultadoTextField.setWrapStyleWord(true);
+		
 		outputPane.add(resultadoTextField);
 	}
 	/* IMPLEMENTAR UPDATE AUTOMATICO
@@ -33,5 +31,8 @@ public class OutputPane extends JPanel{
 	}*/
 	public JPanel getOutputPane () {
 		return outputPane;
+	}
+	public static JTextArea getResultadoTextField () {
+		return resultadoTextField;
 	}
 }

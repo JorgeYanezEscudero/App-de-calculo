@@ -1,5 +1,6 @@
 package gui;
 
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,36 +8,43 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import inputPkg.DescomposicionPrimos;
+import inputGUIPkg.DescomposicionPrimos;
 
 /**
  *Ventana principal donde se van a añadir los componentes de la GUI
  * */
 @SuppressWarnings({ "serial", "unused" })
 public class MainGui extends JFrame{
-	public JFrame mainFrame;
-	public static JPanel inputPane;
+	public static JFrame mainFrame;
+	public static JPanel frameOptionPane;
+	public static JPanel frameInputPane;
+	public static JPanel frameOutputPane;
 	
 	public MainGui () {
 		setContentPane(getContentPane());
 		mainFrame = new JFrame("Calculator 2000");
-		mainFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		mainFrame.setBounds(0, 0, 1080, 720);		
+		mainFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);	
 		mainFrame.getContentPane().setLayout(new FlowLayout(FlowLayout.CENTER, 1000, 20));
+		mainFrame.setPreferredSize(new Dimension(720,480));
+		//mainFrame.setPreferredSize(new Dimension(480,160));testeo de resize
+		mainFrame.setResizable(false);
 		
 		//panel de opciones
 		OptionsPane optionPane = new OptionsPane();
-		mainFrame.getContentPane().add(optionPane.getOptionPane());
+		frameOptionPane = optionPane.getOptionPane();
+		mainFrame.getContentPane().add(frameOptionPane                                                               );
 
 		//panel de input
-		inputPane = new InputPane();
-		mainFrame.getContentPane().add(inputPane);
+		InputPane inputPane = new InputPane();
+		frameInputPane = inputPane.getInputPane();
+		mainFrame.getContentPane().add(frameInputPane);
 		
 		//panel de resultado
 		OutputPane outputPane = new OutputPane();
-		mainFrame.getContentPane().add(outputPane.getOutputPane());
+		frameOutputPane = outputPane.getOutputPane();
+		mainFrame.getContentPane().add(frameOutputPane);
 		
-		
+		mainFrame.pack();
 		mainFrame.setVisible(true);
 	}
 	

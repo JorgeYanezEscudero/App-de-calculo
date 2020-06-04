@@ -3,10 +3,8 @@ package gui;
 import java.awt.FlowLayout;
 
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
-@SuppressWarnings("serial")
-public class InputPane extends JPanel {
+public class InputPane{
 	private JPanel inputPane;
 	
 	public InputPane () {
