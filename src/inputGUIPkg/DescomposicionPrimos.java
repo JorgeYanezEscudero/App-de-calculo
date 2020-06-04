@@ -2,6 +2,7 @@ package inputGUIPkg;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.LinkedList;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -32,9 +33,13 @@ public class DescomposicionPrimos{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			try {
-				//MetodosMatetmaticos.descomposicionfactoresprimos(Integer.parseInt(numeroADescomponer.getText()));
+				/*String listaFactores = "";
+				LinkedList<Integer> lista; //MetodosMatetmaticos.descomposicionfactoresprimos(Integer.parseInt(numeroADescomponer.getText()));
+				for (int i = 0; i < lista.size(); i++) {
+					listaFactores += String.valueOf(lista.get(i));
+				}*/
 				Integer.parseInt(numeroADescomponer.getText());//placeholder de la funcion hasta tener el código
-				OutputPane.getResultadoTextField().setText(numeroADescomponer.getText());
+				OutputPane.getResultadoTextField().setText(numeroADescomponer.getText()/*listaFactores*/);
 				}catch (NumberFormatException formatErr){
 					JOptionPane.showMessageDialog(numeroADescomponer, "Tienes que insertar números.");
 					numeroADescomponer.setText("0");

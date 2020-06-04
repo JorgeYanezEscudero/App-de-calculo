@@ -15,6 +15,9 @@ import inputGUIPkg.DescomposicionPrimos;
 import inputGUIPkg.DivisionFracciones;
 import inputGUIPkg.Mcd;
 import inputGUIPkg.Mcm;
+import inputGUIPkg.MultiplicacionFracciones;
+import inputGUIPkg.RestaFracciones;
+import inputGUIPkg.SumaFracciones;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -78,7 +81,7 @@ public class OptionsPane extends JPanel{
 				case "Simplificacion de Fracciones":
 					MainGui.frameInputPane.removeAll();
 					
-
+					
 					
 					MainGui.mainFrame.revalidate();
 					MainGui.mainFrame.pack();
@@ -88,7 +91,8 @@ public class OptionsPane extends JPanel{
 				case "Suma de fracciones":
 					MainGui.frameInputPane.removeAll();
 					
-					
+					SumaFracciones suma = new SumaFracciones();
+					MainGui.frameInputPane.add(suma.getSumaFraccionesPane());
 
 					MainGui.mainFrame.revalidate();
 					MainGui.mainFrame.pack();
@@ -98,7 +102,8 @@ public class OptionsPane extends JPanel{
 				case "Resta de fracciones":
 					MainGui.frameInputPane.removeAll();
 					
-					
+					RestaFracciones resta = new RestaFracciones();
+					MainGui.frameInputPane.add(resta.getRestaFraccionesPane());
 
 					MainGui.mainFrame.revalidate();
 					MainGui.mainFrame.pack();
@@ -108,7 +113,8 @@ public class OptionsPane extends JPanel{
 				case "Multiplicacion de Fracciones":
 					MainGui.frameInputPane.removeAll();
 					
-					
+					MultiplicacionFracciones multiplicacion = new MultiplicacionFracciones();
+					MainGui.frameInputPane.add(multiplicacion.getMultiplicacionFraccionesPane());
 
 					MainGui.mainFrame.revalidate();
 					MainGui.mainFrame.pack();
