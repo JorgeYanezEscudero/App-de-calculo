@@ -1,11 +1,11 @@
 package gui;
 
-import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -21,7 +21,6 @@ import inputGUIPkg.SimplificacionFracciones;
 import inputGUIPkg.SumaFracciones;
 
 import java.awt.Color;
-import java.awt.Dimension;
 
 @SuppressWarnings("serial")
 public class OptionsPane extends JPanel{
@@ -35,14 +34,11 @@ public class OptionsPane extends JPanel{
 		optionPane.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
 		optionPane.setLayout(new BoxLayout(optionPane, BoxLayout.Y_AXIS));
 		
-		JLabel labelOperaciones = new JLabel("Operaciones");
+		JLabel labelOperaciones = new JLabel("Operaciones",SwingConstants.CENTER);
 		optionPane.add(labelOperaciones);
-		optionPane.add(Box.createRigidArea(new Dimension(0,10)));
 		
 		//desplegable de opciones
 		listaOperaciones = new JComboBox<String>();
-		optionPane.add(Box.createVerticalGlue());
-		optionPane.add(Box.createRigidArea(new Dimension(0,10)));
 		labelOperaciones.setLabelFor(listaOperaciones);
 		listaOperaciones.setModel(new DefaultComboBoxModel<String>(operaciones));		
 		listaOperaciones.addActionListener(new SelectorOpciones());
@@ -54,7 +50,9 @@ public class OptionsPane extends JPanel{
 		return optionPane;
 	}
 	
-	//private class
+	/**
+	 * Listener que funcionará con los datos del desplegable y llamará a todas las funciones e interfaces para realizar las operaciones
+	 * */
 	private class SelectorOpciones implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -88,7 +86,6 @@ public class OptionsPane extends JPanel{
 					MainGui.mainFrame.revalidate();
 					MainGui.mainFrame.pack();
 					MainGui.frameInputPane.updateUI();
-					System.out.println("Simplificacion de Fracciones");
 					break;
 				case "Suma de fracciones":
 					MainGui.frameInputPane.removeAll();
@@ -99,7 +96,6 @@ public class OptionsPane extends JPanel{
 					MainGui.mainFrame.revalidate();
 					MainGui.mainFrame.pack();
 					MainGui.frameInputPane.updateUI();
-					System.out.println("Suma de fracciones");
 					break;
 				case "Resta de fracciones":
 					MainGui.frameInputPane.removeAll();
@@ -110,7 +106,6 @@ public class OptionsPane extends JPanel{
 					MainGui.mainFrame.revalidate();
 					MainGui.mainFrame.pack();
 					MainGui.frameInputPane.updateUI();
-					System.out.println("Resta de fracciones");
 					break;
 				case "Multiplicacion de Fracciones":
 					MainGui.frameInputPane.removeAll();
@@ -121,7 +116,6 @@ public class OptionsPane extends JPanel{
 					MainGui.mainFrame.revalidate();
 					MainGui.mainFrame.pack();
 					MainGui.frameInputPane.updateUI();
-					System.out.println("Multiplicacion de Fracciones");
 					break;
 				case "Division de fracciones":
 					MainGui.frameInputPane.removeAll();

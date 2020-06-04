@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import CalculosMatematicos.MetodosMatematicos;
 import gui.OutputPane;
 
 public class Mcd {
@@ -39,13 +40,12 @@ public class Mcd {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			try {
-				/*
-				 * int n1 = Integer.parseInt(numero1.getText()));
-				 * int n2 = Integer.parseInt(numero2.getText()));
-				 * int resultado = CalculosMatematicos.maximocomundivisor(n1,n2);
-				 * OutputPane.getResultadoTextField().setText(String.valueOf(resultado);
-				 * */
-				OutputPane.getResultadoTextField().setText("Operacion realizada");
+				 int n1 = Integer.parseInt(numero1.getText());
+				 int n2 = Integer.parseInt(numero2.getText());
+				 
+				 int resultado = MetodosMatematicos.maximocomundivisor(n1,n2);
+				 
+				 OutputPane.getResultadoTextField().setText(String.valueOf(resultado));
 			}catch (NumberFormatException formatErr) {
 				JOptionPane.showMessageDialog(realizarOperacion,"Tienes que insertar números.");
 			}

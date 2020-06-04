@@ -5,12 +5,10 @@ import java.awt.FlowLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-import javax.swing.JSeparator;
 
 public class OutputPane {
 	private static JPanel outputPane;
 	private static JTextArea resultadoTextField;
-	private JSeparator separator;
 	
 	public OutputPane () {
 		outputPane = new JPanel();

@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import CalculosMatematicos.MetodosMatematicos;
 import gui.OutputPane;
 
 public class DescomposicionPrimos{
@@ -33,16 +34,16 @@ public class DescomposicionPrimos{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			try {
-				/*String listaFactores = "";
-				LinkedList<Integer> lista; //MetodosMatetmaticos.descomposicionfactoresprimos(Integer.parseInt(numeroADescomponer.getText()));
+				String listaFactores = "";
+				LinkedList<Integer> lista = MetodosMatematicos.descomposicionfactoresprimos(Integer.parseInt(numeroADescomponer.getText()));
 				for (int i = 0; i < lista.size(); i++) {
 					listaFactores += String.valueOf(lista.get(i));
-				}*/
-				Integer.parseInt(numeroADescomponer.getText());//placeholder de la funcion hasta tener el código
-				OutputPane.getResultadoTextField().setText(numeroADescomponer.getText()/*listaFactores*/);
+					if (i < lista.size()-1)
+						listaFactores += " / ";
+				}
+				OutputPane.getResultadoTextField().setText(listaFactores);
 				}catch (NumberFormatException formatErr){
 					JOptionPane.showMessageDialog(numeroADescomponer, "Tienes que insertar números.");
-					numeroADescomponer.setText("0");
 				}
 		}
 	}

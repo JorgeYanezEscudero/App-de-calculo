@@ -48,7 +48,4 @@ public class MainGui extends JFrame{
 		mainFrame.setVisible(true);
 	}
 	
-	public static void main(String[]args) {
-	MainGui maingui = new MainGui();/*BufferedReader br = new BufferedReader(new InputStreamReader(System.in));String s = br.readLine();*/
-	} 
 }

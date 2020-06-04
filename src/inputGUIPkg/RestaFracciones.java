@@ -13,6 +13,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import CalculosMatematicos.Fraccion;
+import CalculosMatematicos.MetodosMatematicos;
 import gui.OutputPane;
 
 public class RestaFracciones {
@@ -85,13 +87,12 @@ public class RestaFracciones {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			try {
-				/*
-				 * Fraccion f1 = new Fraccion(Integer.parseInt(numeradorF1.getText()),Integer.parseInt(denominadorF1.getText()));
-				 * Fraccion f2 = new Fraccion(Integer.parseInt(numeradorF2.getText()),Integer.parseInt(denominadorF2.getText()));
-				 * Fraccion resultado = CalculosMatematicos.resta(f1,f2);
-				 * OutputPane.getResultadoTextField().setText(String.valueOf(resultado.numerador)+"/"+String.valueOf(resultado.denominador));
-				 * */
-				OutputPane.getResultadoTextField().setText("Operacion realizada");
+				Fraccion f1 = new Fraccion(Integer.parseInt(numeradorF1.getText()),Integer.parseInt(denominadorF1.getText()));
+				Fraccion f2 = new Fraccion(Integer.parseInt(numeradorF2.getText()),Integer.parseInt(denominadorF2.getText()));
+				
+				Fraccion resultado = MetodosMatematicos.resta(f1,f2);
+				
+				OutputPane.getResultadoTextField().setText(String.valueOf(resultado.getNumerador())+"/"+String.valueOf(resultado.getDenominador()));
 			}catch (NumberFormatException formatErr) {
 				JOptionPane.showMessageDialog(realizarOperacion,"Tienes que insertar números.");
 			}
