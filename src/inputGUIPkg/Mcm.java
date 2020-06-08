@@ -40,7 +40,6 @@ public class Mcm {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			try {
-				 OutputPane.getResultadoTextField().setText("");
 				 int n1 = Integer.parseInt(numero1.getText());
 				 int n2 = Integer.parseInt(numero2.getText());
 				 

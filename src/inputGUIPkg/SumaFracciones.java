@@ -87,7 +87,6 @@ public class SumaFracciones {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			try {
-				 OutputPane.getResultadoTextField().setText("");
 				 Fraccion f1 = new Fraccion(Integer.parseInt(numeradorF1.getText()),Integer.parseInt(denominadorF1.getText()));
 				 Fraccion f2 = new Fraccion(Integer.parseInt(numeradorF2.getText()),Integer.parseInt(denominadorF2.getText()));
 				 
